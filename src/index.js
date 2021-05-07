@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Event from './Event';
 import reportWebVitals from './reportWebVitals';
+import EventInfo from './EventInfo.json';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {EventInfo.map((item) =>
+      <Event date={item.Date} title={item.Title} desc={item.Description}/>
+    )}
   </React.StrictMode>,
   document.getElementById('root')
 );
